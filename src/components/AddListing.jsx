@@ -1,18 +1,20 @@
 import { useState} from "react"
 import axios from "axios"
+import { post } from '../authServices/authService'
 import { useNavigate } from "react-router-dom"
 
 function AddListing() {
 
 const navigate = useNavigate()
 
+const [title, setTitle] = useState('')
 const [brandGrill, setBrandGrill] = useState('')
 const [modelGrill, setModelGrill]= useState('')
 const [yardDetailsAndSize, setYardDetailsAndSize]= useState('')
 const [price, setPrice]= useState('')
 const [yardAndGrillImage, setYardAndGrillImage]= useState('')
 
-
+const updateTitle = e => setTitle(e.target.value)
 const updateBrandGrill = e => setBrandGrill(e.target.value)
 const updateModelGrill = e => setModelGrill(e.target.value)
 const updateYardDetailsAndSize = e => setYardDetailsAndSize(e.target.value)
@@ -23,7 +25,8 @@ const updateYardAndGrillImage = e => setYardAndGrillImage(e.target.value)
 
 const handleFormsSubmit =e => {
     e.preventDefault()
-    axios.post('http://localhost:3001/api/listing', {
+    post('/api/listing', {
+        title,
         brandGrill,
         modelGrill,
         yardDetailsAndSize,
@@ -42,6 +45,8 @@ const handleFormsSubmit =e => {
         <div>
      
      <form onSubmit={handleFormsSubmit}>
+     <label> Title  </label>
+     <input value={title} onChange={updateTitle}/><br></br> <br></br>
      <label> Grill Brand  </label>
      <input value={brandGrill} onChange={updateBrandGrill}/><br></br> <br></br>
      <label>Grill Model  </label>

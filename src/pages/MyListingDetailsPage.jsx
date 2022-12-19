@@ -2,7 +2,7 @@ import axios from "axios"
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 
-const ListingPage = () => {
+const MyListingDetailsPage = () => {
 const [listingArray, setListingArray] = useState([])
 
 
@@ -21,18 +21,18 @@ const [listingArray, setListingArray] = useState([])
 
     return (
         
-        <main className="ListingListPage">
-            <h1>Yards to rent</h1>
+        <main className="MyListingListPage">
             {listingArray.map(singleListing => {
                 return (
-                    <div className="ListingCard card" key={singleListing._id}>
-                <Link to={`/listing/${singleListing._id}`}>
+                    <div className="MyListingCard card" key={singleListing._id}>
+                
+                <h3>{singleListing.title}</h3>
                 <h4>{singleListing.brandGrill}</h4>
                 <h4>{singleListing.modelGrill}</h4>
                 <h4>{singleListing.yardDetailsAndSize}</h4>
                 <h4>{singleListing.price}</h4>
                 <h4>{singleListing.yardAndGrillImage}</h4>
-                </Link>
+              
                 </div>
                 )
             })}
@@ -40,4 +40,4 @@ const [listingArray, setListingArray] = useState([])
     )
 }
 
-export default ListingPage
+export default MyListingDetailsPage
