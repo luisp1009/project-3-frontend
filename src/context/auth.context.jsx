@@ -5,7 +5,7 @@ const API_URL='http://localhost:3001';
 
 const AuthContext = createContext();
 
-function AuthProviderWrapper(props){
+function AuthProviderWrapper({children}){
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [user, setUser] = useState(null);
@@ -69,10 +69,11 @@ useEffect(() => {
         user,
         storeToken,
         authenticateUser,
-        logOutUser
+        logOutUser,
+        setUser
         }}>
 
-      {props.children}
+      {children}
     </AuthContext.Provider>
   );
 

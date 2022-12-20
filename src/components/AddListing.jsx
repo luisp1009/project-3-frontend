@@ -42,23 +42,24 @@ const handleFormsSubmit =e => {
 }
 
     return (
-        <div>
+        <div className="yardForm">
      
      <form onSubmit={handleFormsSubmit}>
-     <label> Title  </label>
-     <input value={title} onChange={updateTitle}/><br></br> <br></br>
-     <label> Grill Brand  </label>
-     <input value={brandGrill} onChange={updateBrandGrill}/><br></br> <br></br>
-     <label>Grill Model  </label>
-     <input value={modelGrill} onChange={updateModelGrill}/><br></br> <br></br>
-     <label> Yard Details + Size  </label>
-     <textarea value={yardDetailsAndSize} onChange={updateYardDetailsAndSize}/> <br></br><br></br>
-     <label> Price  </label>
-     <input value={price} onChange={updatePrice}/> <br></br><br></br>
-     <label>Grill and Yard images  </label>
-     <input value={yardAndGrillImage} onChange={updateYardAndGrillImage} type="file" multiple/><br></br><br></br>
+     <label className="titles"> Title  </label>
+     <input  className="inputs" value={title} onChange={updateTitle}/><br></br> <br></br>
+     <label  className="titles"> Grill Brand  </label>
+     <input  className="inputs" value={brandGrill} onChange={updateBrandGrill}/><br></br> <br></br>
+     <label  className="titles">Grill Model  </label>
+     <input className="inputs" value={modelGrill} onChange={updateModelGrill}/><br></br> <br></br>
+     <label  className="titles"> Yard Details + Size  </label>
+     <textarea className="inputs" value={yardDetailsAndSize} rows="4" cols="25" onChange={updateYardDetailsAndSize}/> <br></br><br></br>
+     <br></br><br></br>
+     <label  className="titles"> Price  </label>
+     <input className="inputs" value={price} onChange={updatePrice}/> <br></br><br></br>
+     <label  className="titles">Grill and Yard images  </label>
+     <input className="inputs" value={yardAndGrillImage} onChange={updateYardAndGrillImage} type="file" multiple/><br></br><br></br>
       
-     <br></br><button>Click here to list your yard</button>
+     <br></br><button className="yardRent">Click here to list your yard</button>
      </form>
      </div>
     )

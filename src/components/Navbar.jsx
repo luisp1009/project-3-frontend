@@ -9,9 +9,7 @@ function Navbar() {
   return (
     <div className="navigation">
     <nav>
-    {isLoggedIn && (
-      <span>Hi {user.name}</span>
-    )}
+   
       <Link to="/">
         <button>Home</button>
       </Link>
@@ -27,7 +25,14 @@ function Navbar() {
           <Link to="/profile">
             <button>Profile</button>
           </Link>
+          
+          <div>
+          <br></br>
+          {isLoggedIn && (
+      <span className="username">Hi {user.name}</span>
+    )}
           <button onClick={logOutUser}>Logout</button>
+          </div>
         </>
       )}
 
@@ -42,7 +47,7 @@ function Navbar() {
           
         </>
       )}
- 
+      
       
     </nav>
     </div>

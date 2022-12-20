@@ -31,7 +31,7 @@ const [listingArray, setListingArray] = useState([])
                 <h4>{singleListing.modelGrill}</h4>
                 <h4>{singleListing.yardDetailsAndSize}</h4>
                 <h4>{singleListing.price}</h4>
-                <h4>{singleListing.yardAndGrillImage}</h4>
+                <h4>{singleListing.yardAndGrillImageArray}</h4>
               
                 </div>
                 )
