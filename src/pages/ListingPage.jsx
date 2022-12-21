@@ -23,7 +23,7 @@ const [listingArray, setListingArray] = useState([])
     return (
         
         <main className="ListingListPage">
-            <h1>Yards to rent</h1>
+            <h1>Yards for rent</h1>
             {listingArray.map(singleListing => {
                 return (
                     <div className="ListingCard card" key={singleListing._id}>

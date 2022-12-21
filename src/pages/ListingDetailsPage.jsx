@@ -25,17 +25,32 @@ const [listingArray, setListingArray] = useState([])
             {listingArray.map(singleListing => {
                 return (
                     <div className="ListingCard card" key={singleListing._id}>
+               
+                <p><b>Title:</b> {singleListing.title}</p>
+
                 
-                <h3>{singleListing.title}</h3>
-                <h4>{singleListing.brandGrill}</h4>
-                <h4>{singleListing.modelGrill}</h4>
-                <h4>{singleListing.yardDetailsAndSize}</h4>
-                <h4>{singleListing.price}</h4>
-                <h4>{singleListing.yardAndGrillImage}</h4>
+                <p><b>Grill:</b> {singleListing.brandGrill}</p>
+
+                
+                <p><b>Grill model: </b>{singleListing.modelGrill}</p>
+
+                
+                <p className="yardDetails"> <b>Details:</b> {singleListing.yardDetailsAndSize}</p>
+
+               
+                <p><b>Price:</b> {singleListing.price}</p>
+
+                
+                <img src={singleListing.yardAndGrillImage}/>
+                
               
                 </div>
                 )
             })}
+
+            <Link to="/YardUpdatePage">
+        <button>Edit</button>
+      </Link>
         </main>
     )
 }

@@ -3,9 +3,15 @@ import axios from "axios"
 import { post } from '../authServices/authService'
 import { useNavigate } from "react-router-dom"
 
+
 function AddListing() {
 
 const navigate = useNavigate()
+const api = axios.create({
+    // make sure you use PORT = 5005 (the port where our server is running)
+    baseURL: "http://localhost:3001/api"
+    // withCredentials: true // => you might need this option if using cookies and sessions
+  });
 
 const [title, setTitle] = useState('')
 const [brandGrill, setBrandGrill] = useState('')
@@ -20,6 +26,16 @@ const updateModelGrill = e => setModelGrill(e.target.value)
 const updateYardDetailsAndSize = e => setYardDetailsAndSize(e.target.value)
 const updatePrice = e => setPrice(e.target.value)
 const updateYardAndGrillImage = e => setYardAndGrillImage(e.target.value)
+
+const errorHandler = (err) => {
+    throw err;
+  };
+  
+  const uploadImage = (file) => {
+    return api.post("/listing", file)
+      .then(res => res.data)
+      .catch(errorHandler);
+  };
 
 
 
@@ -41,6 +57,20 @@ const handleFormsSubmit =e => {
 
 }
 
+
+const handleFileUpload = (e) => {
+    const uploadData = new FormData()
+    uploadData.append('yardAndGrillImage', e.target.files[0])
+
+    uploadImage(uploadData)
+    .then(response => {
+        setYardAndGrillImage(response.yardAndGrillImage)
+    })
+    .catch(err => console.log("error while uploading the file", err))
+}
+
+
+
     return (
         <div className="yardForm">
      
@@ -57,7 +87,8 @@ const handleFormsSubmit =e => {
      <label  className="titles"> Price  </label>
      <input className="inputs" value={price} onChange={updatePrice}/> <br></br><br></br>
      <label  className="titles">Grill and Yard images  </label>
-     <input className="inputs" value={yardAndGrillImage} onChange={updateYardAndGrillImage} type="file" multiple/><br></br><br></br>
+     <input className="inputs"  onChange={(e) => handleFileUpload(e)} type="file"/>
+     <br></br><br></br>
       
      <br></br><button className="yardRent">Click here to list your yard</button>
      </form>

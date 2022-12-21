@@ -42,7 +42,7 @@ button {
 }
 
 h1 {
-  color: #c3073f;
+  color: white;
   font-family: 'Rubik Vinyl', cursive;
 }
 
@@ -63,10 +63,14 @@ h1 {
 }
 
 p {
-  font-size: 30px;
+  font-size: 20px;
   letter-spacing: 1px;
-  font-family: 'Amatic SC', cursive;
+  font-family: 'Roboto', sans-serif;
   line-height: 1.3;
+  font-weight: bold;
+  width: 80%
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .rent{
@@ -76,3 +80,74 @@ p {
 .gifHome {
   width: 300px;
 }
+.deleteBtn{
+  font-size: 15px;
+  
+  color: white;
+
+}
+.deleteBtn:hover{
+  font-size: 15px;
+  color: #c3073f;
+ 
+
+}
+
+i {
+  /* margin-left: -30px;  */
+  cursor: pointer;
+}
+
+input {
+  width: 300px;
+  height: 25px;
+}
+
+.icon {
+  padding: 10px;
+  min-width: 40px;
+  margin-left: -30px; 
+
+  
+}
+
+.emailInput{
+  margin-left: -50px;
+}
+.fa-eye{
+  margin-left: -30px;  
+ 
+}
+.eye{
+  margin-right: 12px;
+}
+
+.editProfile{
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.emailInputAndIcon{
+  margin-left: 15px;
+}
+
+.yardDetails {
+  width: 80%
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.editInputUpdate {
+  width: 250px;
+}
+
+p b {
+  color: #c3073f;
+}
+
+
+
+

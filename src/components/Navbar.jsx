@@ -19,7 +19,7 @@ function Navbar() {
             <button>Rent your Outdoor space</button>
           </Link>
           <Link to="/listing">
-            <button>Yards to rent</button>
+            <button>Find Backyards</button>
           </Link>
           
           <Link to="/profile">

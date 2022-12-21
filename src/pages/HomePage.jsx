@@ -1,18 +1,18 @@
 import AddListing from "../components/AddListing"
+import { Link } from "react-router-dom"
 
 
 function HomePage(){
     return (
         <main>
         <img className="gifHome" src="/src/assets/project3.gif"></img>
-            <h1>RENT MY YARD</h1>
-            <p>Tired of trying to grill your food with the windows open in you apartment, we know living in a big city like Miami can be crowded with little to none outdoor space, but we have a solution.
-            <b className="rent">RENT MY YARD.</b><br></br>
-            Our idea is simple, for those property owners with the extra space why not monetize your outdoor space by renting your yard + your grill.
-
-Our network of yards includes a variety of sizes and types, from small backyard patios to large event venues. 
-Put your outdoor spave to work for you </p>
+            <h1>Stop grilling inside your aparment</h1>
+            <p>Perhaps you don’t have access to a backyard of your own, or maybe you’re just looking for a change of scenery or just a simple BBQ day. Whatever your reason for doing so, it’s surprisingly easy to rent a backyard and a grill for a day. Discover where and how to do so as well as a few examples of backyards that are available to rent in your area</p>
+            <Link to="/listing">
+            <button>Find Backyards</button>
+          </Link>
         </main>
+        
     )
 }
 
