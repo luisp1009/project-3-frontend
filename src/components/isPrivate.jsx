@@ -13,7 +13,6 @@ function IsPrivate (props) {
     } else {
       return props.children;
     }
-
 }
 
 export default IsPrivate
