@@ -7,7 +7,7 @@ import ListingPage from './pages/ListingPage'
 import ListingDetailsPage from './pages/ListingDetailsPage'
 import ProfilePage from './pages/ProfilePage'
 import RentPage from './pages/RentPage'
-import SignupPage from './pages/SignupPage'
+import SignUpPage from './pages/SignUpPage'
 import LoginPage from './pages/LoginPage'
 import IsPrivate from './components/IsPrivate'
 import IsAnon from './components/IsAnon'
@@ -27,7 +27,7 @@ function App() {
     <Route path='/profile' element={<IsPrivate><ProfilePage/></IsPrivate>}/>
     <Route path='/listing' element ={<IsPrivate><ListingPage/></IsPrivate>}/>
     <Route path='/listing/:listingId' element ={<IsPrivate><ListingDetailsPage/></IsPrivate>}/>
-    <Route path='/signup' element ={<IsAnon><SignupPage/></IsAnon>}/>
+    <Route path='/signup' element ={<IsAnon><SignUpPage/></IsAnon>}/>
     <Route path='/login' element ={<IsAnon><LoginPage/></IsAnon>}/>
 
 
