@@ -23,7 +23,7 @@ const updateState = e => setState ({
 const onFormSubmit = e => {
     e.preventDefault()
     console.log(state)
-    post('http://localhost:3001/auth/signup', state)
+    post(`${import.meta.env.VITE_BACKEND_URL}/auth/signup`, state)
     .then(axiosResponse =>{
         console.log(axiosResponse.data)
         navigate('/login')

@@ -9,7 +9,7 @@ function AddListing() {
 const navigate = useNavigate()
 const api = axios.create({
     // make sure you use PORT = 5005 (the port where our server is running)
-    baseURL: "http://localhost:3001/api"
+    baseURL: `${import.meta.env.VITE_BACKEND_URL}/api`
     // withCredentials: true // => you might need this option if using cookies and sessions
   });
 

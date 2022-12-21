@@ -8,7 +8,7 @@ const [listingArray, setListingArray] = useState([])
 
 
     useEffect(() => {
-        axios.get('http://localhost:3001/api/listing', {
+        axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/listing`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('authToken')}`
             }
