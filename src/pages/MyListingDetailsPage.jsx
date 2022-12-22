@@ -1,20 +1,23 @@
 import axios from "axios"
 import { useState, useEffect } from "react"
-import { Link } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
+
 
 const MyListingDetailsPage = () => {
-const [listingArray, setListingArray] = useState([])
+const [listing, setListing] = useState(null)
+
+const params = useParams()
 
 
     useEffect(() => {
-        axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/listing`, {
+        axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/listing/${params.listingId}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('authToken')}`
             }
         })
         .then(axiosResponse => {
             console.log(axiosResponse.data)
-            setListingArray(axiosResponse.data)
+            setListing(axiosResponse.data)
         }) 
         .catch(err => console.log(err))
     }, [])
@@ -22,20 +25,30 @@ const [listingArray, setListingArray] = useState([])
     return (
         
         <main className="MyListingListPage">
-            {listingArray.map(singleListing => {
-                return (
-                    <div className="MyListingCard card" key={singleListing._id}>
+        {listing &&
+
+                <div className="MyListingCard card" key={listing._id}>
+                <img className="listingImages" src={listing.yardAndGrillImage}/>
                 
-                <h3>{singleListing.title}</h3>
-                <h4>{singleListing.brandGrill}</h4>
-                <h4>{singleListing.modelGrill}</h4>
-                <h4>{singleListing.yardDetailsAndSize}</h4>
-                <h4>{singleListing.price}</h4>
-                <img>{singleListing.yardAndGrillImage}</img>
+                <p><b>Title:</b> {listing.title}</p>
+
+                
+                <p><b>Grill:</b> {listing.brandGrill}</p>
+
+                
+                <p><b>Grill model: </b>{listing.modelGrill}</p>
+
+                
+                <p className="yardDetails"> <b>Details:</b> {listing.yardDetailsAndSize}</p>
+
+               
+                <p><b>Price:</b> {listing.price}</p>
+
+                
+               
               
-                </div>
-                )
-            })}
+                </div>}
+
         </main>
     )
 }

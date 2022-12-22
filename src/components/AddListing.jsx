@@ -1,4 +1,4 @@
-import { useState, useContext } from "react"
+import { useState, useContext, useEffect } from "react"
 import axios from "axios"
 import { post } from '../authServices/authService'
 import { useNavigate } from "react-router-dom"
@@ -23,6 +23,11 @@ const [modelGrill, setModelGrill]= useState('')
 const [yardDetailsAndSize, setYardDetailsAndSize]= useState('')
 const [price, setPrice]= useState('')
 const [yardAndGrillImage, setYardAndGrillImage]= useState('')
+const [coordinates, setCoordinates] = useState({
+    lat: null,
+    lng: null
+})
+
 
 const updateTitle = e => setTitle(e.target.value)
 const updateBrandGrill = e => setBrandGrill(e.target.value)
@@ -54,7 +59,9 @@ const handleFormsSubmit =e => {
         yardDetailsAndSize,
         price,
         yardAndGrillImage,
-        owner: user._id
+        owner: user._id,
+        latitude: coordinates.lat,
+        longitude: coordinates.lng
     })
     .then(axiosResponse => {
         console.log(axiosResponse.data)
@@ -79,6 +86,36 @@ const handleFileUpload = (e) => {
 
 
 
+useEffect(() => {
+    if (navigator.geolocation) {
+ 
+        // Get current position
+        // The permissions dialog will pop up
+        navigator.geolocation.getCurrentPosition(function (position) {
+          // Create an object to match Google's Lat-Lng object format
+          const center = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+          console.log('center: ', center)
+          setCoordinates({
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          })
+
+          // User granted permission
+          // Center the map in the position we got
+        }, function () {
+          // If something goes wrong
+          console.log('Error in the geolocation service.');
+        });
+      } else {
+        // Browser says: Nah! I do not support this.
+        console.log('Browser does not support geolocation.');
+      }
+}, [])
+
+
     return (
         <div className="yardForm">
      
@@ -93,8 +130,8 @@ const handleFileUpload = (e) => {
      <textarea className="inputs" value={yardDetailsAndSize} rows="4" cols="25" onChange={updateYardDetailsAndSize}/> <br></br><br></br>
      <br></br><br></br>
      <label  className="titles"> Price  </label>
-     <input className="inputs" value={price} onChange={updatePrice}/> <br></br><br></br>
-     <label  className="titles">Grill and Yard images  </label>
+     <input className="inputs" value={price} onChange={updatePrice} type="number" min="20" max="1000"placeholder="$ per hour"  /> <br></br><br></br>
+     <label  className="titles">Image  </label>
      <input className="inputs"  onChange={(e) => handleFileUpload(e)} type="file"/>
      <br></br><br></br>
       

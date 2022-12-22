@@ -26,7 +26,7 @@ const [listingArray, setListingArray] = useState([])
             {listingArray.map(singleListing => {
                 return (
                     <div className="MyListingCard card" key={singleListing._id}>
-                <Link to={`/listing/${singleListing._id}`}>
+                <Link to={`/listing/this-listing/${singleListing._id}`}>
     
                 <h3>{singleListing.title}</h3>
             

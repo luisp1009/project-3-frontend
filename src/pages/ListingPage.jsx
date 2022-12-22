@@ -23,13 +23,13 @@ const [listingArray, setListingArray] = useState([])
     return (
         
         <main className="ListingListPage">
-            <h1>Yards for rent</h1>
+            <h1>YARDS <span className="titleSpace"></span>FOR <span className="titleSpace"></span>RENT</h1>Click to get more info
             {listingArray.map(singleListing => {
                 return (
                     <div className="ListingCard card" key={singleListing._id}>
                 <Link to={`/listing/${singleListing._id}`}>
-                Click the Title to find out more
-                <h3>{singleListing.title}</h3>
+                
+                <h3 className="titleYardToRent">{singleListing.title}</h3>
             
                 </Link>
                 </div>

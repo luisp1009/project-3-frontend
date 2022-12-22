@@ -1,9 +1,29 @@
 import axios from "axios"
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
+import iconLocation from '../assets/iconLocation.png'
+import L from "leaflet";
+import { MapContainer } from "react-leaflet";
+import { TileLayer, Marker, Popup } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
 
 const ListingDetailsPage = () => {
 const [listingArray, setListingArray] = useState([])
+
+
+
+    let myIcon = L.icon({
+      iconUrl: iconLocation,
+    //   iconUrl: require("../../iconLocation.png"),
+      iconSize: [36, 36],
+      iconAnchor: [18, 18],
+    });
+const [map, setMap] = useState({
+      lat: 25.80051750601982,
+      lng: -80.19831072619859,
+      zoom: 13,
+    });
+
 
 
     useEffect(() => {
@@ -19,38 +39,111 @@ const [listingArray, setListingArray] = useState([])
         .catch(err => console.log(err))
     }, [])
 
+
+
+
+
     return (
         
         <main className="ListingListPage">
+
+
+
+            <div>
+            <MapContainer
+            className="mapContainer"
+            id={"tagMap"}
+            center={[map.lat, map.lng]}
+            zoom={map.zoom}
+            style={{ width: "100%", height: "40vh"}}
+          >
+            <TileLayer
+              attribution='&copy <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+  
+            {listingArray.map((spot) => {
+              const point = [
+                spot.latitude,
+                spot.longitude,
+              ];
+  
+              return (
+                point[0] && (
+                  <Marker icon={myIcon} position={point} key={spot["_id"]}>
+
+                    <Popup>
+                    <img
+                        src={spot.yardAndGrillImage}
+                        alt="testimage"
+                        className="previewImage"
+                      /><br></br>
+                      <span>
+                      {spot.title}
+                        {/* <TheseTags photo={spot} /> */}
+                      </span>
+                      
+                      <span>
+                        {/* <Link to={`/${spot.title}/details`}>Yard details</Link> */}
+                        
+                        <br></br>
+                        {spot.yardDetailsAndSize}
+                        <br></br>
+                        <br></br>
+                        Price: ${spot.price}
+                       
+                      </span>
+                      <br />
+                      
+                    </Popup>
+                  </Marker>
+                )
+              );
+            })}
+          </MapContainer>
+
+            </div>
+
+
+
+
+
+
+
+
             {listingArray.map(singleListing => {
                 return (
                     <div className="ListingCard card" key={singleListing._id}>
+                    
+                    <img className="listingImages" src={singleListing.yardAndGrillImage}/> <img className="listingImages" src={singleListing.yardAndGrillImage}/> <img className="listingImages" src={singleListing.yardAndGrillImage}/> <img className="listingImages" src={singleListing.yardAndGrillImage}/> <img className="listingImages" src={singleListing.yardAndGrillImage}/>
+
+                <p><b>Title:</b> {singleListing.title} <span className="titleSpace"></span>
+
+                
+                <b>Grill:</b> {singleListing.brandGrill} <span className="titleSpace"></span>
+
+                
+                <b>Grill model: </b>{singleListing.modelGrill}</p>
+
+                
+                <p className="yardDetails"> <b>Details:</b> {singleListing.yardDetailsAndSize} </p>
+
                
-                <p><b>Title:</b> {singleListing.title}</p>
+                <p><b>Price: $</b> {singleListing.price}</p>
 
                 
-                <p><b>Grill:</b> {singleListing.brandGrill}</p>
-
-                
-                <p><b>Grill model: </b>{singleListing.modelGrill}</p>
-
-                
-                <p className="yardDetails"> <b>Details:</b> {singleListing.yardDetailsAndSize}</p>
-
                
-                <p><b>Price:</b> {singleListing.price}</p>
-
-                
-                <img src={singleListing.yardAndGrillImage}/>
                 
               
                 </div>
                 )
             })}
 
-            <Link to="/YardUpdatePage">
+            {/* <Link to="/YardUpdatePage">
         <button>Edit</button>
-      </Link>
+      </Link> */}
+
+      
         </main>
     )
 }

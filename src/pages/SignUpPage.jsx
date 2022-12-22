@@ -19,11 +19,14 @@ const updateState = e => setState ({
     [e.target.name]: e.target.value
 })
 
+const [passwordShown, setPasswordShown] = useState(false);
+
 const togglePassword = () => {
     // When the handler is invoked
     // inverse the boolean state of passwordShown
     setPasswordShown(!passwordShown);
   };
+
 
 const onFormSubmit = e => {
     e.preventDefault()
@@ -48,10 +51,15 @@ const onFormSubmit = e => {
                 <input value ={state.name} name="name" onChange={updateState}/>
                 <br></br><br></br>
 
+                <div className="signUpPassword">
+                <i className="fa fa-lock icon "></i>
+                <input value={state.password} 
+
+                type={passwordShown ? "text" : "password"} 
                 
-                <i class="fa fa-lock icon" id="togglePassword" onClick={togglePassword}></i>
-                <input  value ={state.password} type="password" name="password" onChange={updateState}/>
+                name="password" onChange={updateState} />
                 <i class="far fa-eye" id="togglePassword" onClick={togglePassword}></i>
+                </div>
                 
                 <br></br><br></br>
                 <button>Sign Up</button>

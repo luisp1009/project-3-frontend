@@ -3,6 +3,7 @@ import { useContext, useState } from 'react';
 import { post } from "../authServices/authService";
 import { AuthContext } from '../context/auth.context';
 import MyListingPage from './MyListingPage'
+import YardUpdatePage from './YardUpdatePage'
 
 import { useNavigate } from "react-router-dom";
 
@@ -96,7 +97,7 @@ const togglePassword = () => {
         ) : ( 
             <span>
             <i class="fa fa-user icon"></i>
-                <span> <b> Username: {user.name} </b></span>
+                <span> <b> USERNAME: {user.name} </b></span>
                
                 <button  onClick={() => setIsEditingUsername(true)}>edit</button>
             </span>
@@ -116,7 +117,7 @@ const togglePassword = () => {
             </span>
         ) : ( 
             <span>
-                <span> <i className="fa fa-envelope icon "></i> <b> Email: {user.email}</b> </span>
+                <span> <i className="fa fa-envelope icon "></i> <b> EMAIL: {user.email}</b> </span>
                 <button  onClick={() => setIsEditingEmail(true)}>edit</button>
             </span>
             
@@ -133,7 +134,7 @@ const togglePassword = () => {
         ) : ( 
             <span>
                 <span> <i className="fa fa-lock icon "></i>
-                <b> Password: *****</b></span>
+                <b> PASSWORD: *****</b></span>
                 <button onClick={() => setIsEditingPassword(true)}>edit</button>
             </span>
             

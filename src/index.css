@@ -28,7 +28,7 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
+  min-width: 32 0px;
   min-height: 100vh;
 
   
@@ -38,12 +38,13 @@ body {
 body::after {
   content: "";
   background: url(/src/assets/BackgroundImage.jpg);
+  background-size: cover;
   opacity: 0.1;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  position: absolute;
+  position: fixed;
   z-index: -1;   
 }
 
