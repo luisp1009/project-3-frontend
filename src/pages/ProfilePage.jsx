@@ -145,11 +145,11 @@ const togglePassword = () => {
 
 
 
-        {/* <br /> <br />
+        <br /> <br />
         <hr />
         <br /> <br />
         <span> <b>MY YARD: </b></span>
-        <MyListingPage/> */}
+        <MyListingPage userId={user._id}/>
         </div>
       </div>
     )

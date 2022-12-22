@@ -2,18 +2,18 @@ import axios from "axios"
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 
-const MyListingPage = () => {
+const MyListingPage = ({userId}) => {
 const [listingArray, setListingArray] = useState([])
 
 
     useEffect(() => {
-        axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/listing`, {
+        axios.get(`${import.meta.env.VITE_BACKEND_URL}/api//my-listings/${userId}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('authToken')}`
             }
         })
         .then(axiosResponse => {
-            console.log(axiosResponse.data)
+            console.log("Mylistings", axiosResponse.data)
             setListingArray(axiosResponse.data)
         }) 
         .catch(err => console.log(err))

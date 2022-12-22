@@ -1,10 +1,14 @@
-import { useState} from "react"
+import { useState, useContext } from "react"
 import axios from "axios"
 import { post } from '../authServices/authService'
 import { useNavigate } from "react-router-dom"
 
+import { AuthContext } from "../context/auth.context"
+
 
 function AddListing() {
+
+    const { user } = useContext(AuthContext)
 
 const navigate = useNavigate()
 const api = axios.create({
@@ -32,8 +36,10 @@ const errorHandler = (err) => {
   };
   
   const uploadImage = (file) => {
-    return api.post("/listing", file)
-      .then(res => res.data)
+    return post("/api/upload", file)
+      .then(res => {
+        console.log("Photo uploaD RESPONSE:", res.data)
+        return res.data})
       .catch(errorHandler);
   };
 
@@ -48,6 +54,7 @@ const handleFormsSubmit =e => {
         yardDetailsAndSize,
         price,
         yardAndGrillImage,
+        owner: user._id
     })
     .then(axiosResponse => {
         console.log(axiosResponse.data)
@@ -64,7 +71,8 @@ const handleFileUpload = (e) => {
 
     uploadImage(uploadData)
     .then(response => {
-        setYardAndGrillImage(response.yardAndGrillImage)
+        console.log("RESPONDINGGGGGGGGG", response)
+        setYardAndGrillImage(response.fileUrl)
     })
     .catch(err => console.log("error while uploading the file", err))
 }
