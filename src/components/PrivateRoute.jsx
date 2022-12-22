@@ -15,4 +15,4 @@ function PrivateRoute (props) {
     }
 }
 
-export default IsPrivate
+export default PrivateRoute
