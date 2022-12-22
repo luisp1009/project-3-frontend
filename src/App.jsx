@@ -10,7 +10,7 @@ import ProfilePage from './pages/ProfilePage'
 import RentPage from './pages/RentPage'
 import SignUpPage from './pages/SignUpPage'
 import LoginPage from './pages/LoginPage'
-import IsPrivate from './components/IsPrivate'
+import PrivateRoute from './components/PrivateRoute'
 import IsAnon from './components/IsAnon'
 
 
@@ -24,11 +24,11 @@ function App() {
     <Routes>
     
     <Route path='/' element ={<HomePage/>}/>
-    <Route path='/rent' element={<IsPrivate><RentPage/></IsPrivate>}/>
-    <Route path='/profile' element={<IsPrivate><ProfilePage/></IsPrivate>}/>
-    <Route path='/listing' element ={<IsPrivate><ListingPage/></IsPrivate>}/>
-    <Route path='/listing/:listingId' element ={<IsPrivate><ListingDetailsPage/></IsPrivate>}/>
-    <Route path='/listing/this-listing/:listingId' element ={<IsPrivate><MyListingDetailsPage/></IsPrivate>}/>
+    <Route path='/rent' element={<PrivateRoute><RentPage/></PrivateRoute>}/>
+    <Route path='/profile' element={<PrivateRoute><ProfilePage/></PrivateRoute>}/>
+    <Route path='/listing' element ={<PrivateRoute><ListingPage/></PrivateRoute>}/>
+    <Route path='/listing/:listingId' element ={<PrivateRoute><ListingDetailsPage/></PrivateRoute>}/>
+    <Route path='/listing/this-listing/:listingId' element ={<PrivateRoute><MyListingDetailsPage/></PrivateRoute>}/>
     <Route path='/signup' element ={<IsAnon><SignUpPage/></IsAnon>}/>
     <Route path='/login' element ={<IsAnon><LoginPage/></IsAnon>}/>
 
