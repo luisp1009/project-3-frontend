@@ -19,9 +19,9 @@ const [listingArray, setListingArray] = useState([])
       iconAnchor: [18, 18],
     });
 const [map, setMap] = useState({
-      lat: 25.80051750601982,
+      lat: 25.779632, 
       lng: -80.19831072619859,
-      zoom: 13,
+      zoom: 15,
     });
 
 
@@ -129,10 +129,12 @@ const [map, setMap] = useState({
                 <p className="yardDetails"> <b>Details:</b> {singleListing.yardDetailsAndSize} </p>
 
                
-                <p><b>Price: $</b> {singleListing.price}</p>
+                <p><b>Price: </b> {singleListing.price} <a href="mailto:email@example.com?subject=More Info&body=I hope this email finds you well. I am writing to request more information about ypur yard.
+Could you please provide me with some additional details.
 
-                
-               
+Thank you">Request more info</a></p>
+<br></br>
+                <hr/>
                 
               
                 </div>

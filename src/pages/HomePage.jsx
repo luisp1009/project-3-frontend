@@ -5,7 +5,7 @@ import myImg from '../assets/dining-table-bbq.jpg'
 function HomePage(){
     return (
         <main>
-         <h1>RENT<span className="titleSpace"></span> A <span className="titleSpace"></span>YARD</h1>
+       
         <img className="homeImage" src={myImg}/>
         
            

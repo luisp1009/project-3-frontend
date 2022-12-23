@@ -1,13 +1,16 @@
 import { Link } from "react-router-dom";
 import { useContext } from 'react';
 import { AuthContext } from '../context/auth.context';
+
  
 function Navbar() {
 
   const { user, isLoggedIn, logOutUser } = useContext(AuthContext);
 
   return (
+    
     <div className="navigation">
+   
      <div className="userLoggeIn">
           <br></br>
           {isLoggedIn && (
@@ -15,8 +18,9 @@ function Navbar() {
     )} {isLoggedIn && (
           <button  className="logoOutBtn"onClick={logOutUser}>Logout</button> )}
           </div>
+        
     <nav>
-   
+    
       <Link to="/">
         <button>Home</button>
       </Link>
@@ -51,6 +55,7 @@ function Navbar() {
       
       
     </nav>
+   
     </div>
   );
 }

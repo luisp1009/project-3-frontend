@@ -120,6 +120,7 @@ useEffect(() => {
         <div className="yardForm">
      
      <form onSubmit={handleFormsSubmit}>
+     <br></br><br></br><br></br>
      <label className="titles"> Title  </label>
      <input  className="inputs" value={title} onChange={updateTitle}/><br></br> <br></br>
      <label  className="titles"> Grill Brand  </label>
@@ -136,6 +137,7 @@ useEffect(() => {
      <br></br><br></br>
       
      <br></br><button className="yardRent">Click here to list your yard</button>
+     <br></br><br></br><br></br>
      </form>
      </div>
     )

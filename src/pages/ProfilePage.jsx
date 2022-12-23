@@ -84,6 +84,7 @@ const togglePassword = () => {
 
 
     return (
+        
         <div className="userEditDiv">
             <br /> <br /> <br />
      
@@ -141,16 +142,14 @@ const togglePassword = () => {
         )
         }
 
-        <br /> <br />
+    
         <Link onClick={submitDelete}><p className="deleteBtn">click here to delete your account</p></Link>
 
 
 
         <br /> <br />
         <hr />
-        <br /> <br />
-        <span> <b>MY YARD: </b></span>
-        <MyListingPage userId={user._id}/>
+        <MyListingPage  userId={user._id}/>
         </div>
       </div>
     )

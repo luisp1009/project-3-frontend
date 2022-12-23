@@ -51,6 +51,8 @@ h1 {
   width: 600px;
   display: flex;
   justify-content: center;
+  border: 1px solid white;
+  border-radius: 25px;
 }
 
 .titles {
@@ -179,10 +181,12 @@ p b {
   margin-right: auto;
 }
 
-/* .homeImage:hover{
-content: url('./assets/giphy.gif');
-width: 500px;
-} */
+
+
+.homeImage:hover{
+content: url('./assets/logoImg.png');
+width: 571px;
+}
 .userLoggeIn{
 margin-left: 420px;  
 }
@@ -226,4 +230,17 @@ hr{
 
 .userEditDiv {
   width: 600px;
+  border: 1px solid white;
+  border-radius: 25px;
 }
+
+/* .logImage{
+  width: 100px;
+  position: absolute;
+  margin-bottom: 50px;
+}
+
+.rentMyYard{
+  display: flex;
+  position: relative;
+} */
