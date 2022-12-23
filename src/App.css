@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  
 }
 
 .logo {
@@ -175,18 +176,21 @@ p b {
 
 
 .homeImage{
-  width: 100%;
-  margin-left: auto;
-  margin-top: 30px;
-  margin-right: auto;
+  width: 550px;
+  filter: drop-shadow(0 0 2em #c3073f);
 }
 
 
 
 .homeImage:hover{
 content: url('./assets/dining-table-bbq.jpg');
-width: 571px;
+width: 100%;
+margin-left: auto;
+margin-top: 30px;
+margin-right: auto;
+filter: none
 }
+
 .userLoggeIn{
 margin-left: 420px;  
 }
