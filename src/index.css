@@ -116,6 +116,7 @@ button:active{
     font-size: 15px;
     width: 250px;
     text-align: left;
+    color: white !important;
   }
   .yardDetails{
     width: 300px;
