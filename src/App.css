@@ -1,9 +1,11 @@
 #root {
   width: 100vw;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
-  background-color: black !important;
+  background-color: black;
+}
+body{
+  background-color: black;
 }
 
 .logo {
@@ -101,7 +103,7 @@ p {
 
 nav{
   background-color: black;
-  width: 100%;
+  width: 95%;
   margin-left: auto;
   margin-right: auto;
   border-radius: 20px;

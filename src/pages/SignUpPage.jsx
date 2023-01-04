@@ -43,17 +43,17 @@ const onFormSubmit = e => {
             <form onSubmit={onFormSubmit}>
                
                 <i class="fa fa-envelope icon"></i>
-                <input value ={state.email} name="email" onChange={updateState}/>
+                <input className="loginInput" value ={state.email} name="email" onChange={updateState}/>
                 <br></br><br></br>
 
                
                 <i class="fa fa-user icon"></i>
-                <input value ={state.name} name="name" onChange={updateState}/>
+                <input className="loginInput" value ={state.name} name="name" onChange={updateState}/>
                 <br></br><br></br>
 
                 <div className="signUpPassword">
                 <i className="fa fa-lock icon "></i>
-                <input value={state.password} 
+                <input className="loginInput" value={state.password} 
 
                 type={passwordShown ? "text" : "password"} 
                 

@@ -11,6 +11,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
   
 }
 
@@ -47,7 +48,7 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
-  margin-bottom: ;
+  
 }
 button:hover {
   background-color: white;
@@ -75,9 +76,9 @@ button:active{
     color: #213547;
     background-color: #ffffff;
   }
-  a:hover {
+  /* a:hover {
     color: #747bff;
-  }
+  } */
   button {
     background-color: #f9f9f9;
   }
@@ -94,9 +95,19 @@ button:active{
     margin-top: 11px;
   }
 
+  .loginInput{
+    width: 70%;
+  }
+
+  i{
+    color: white;
+  }
   button{
     margin-bottom: 10px;
+    background-color: black;    
   }
+
+  
 
   .yardForm{
     width: 100vw;
