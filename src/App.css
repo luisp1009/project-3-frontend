@@ -1,5 +1,5 @@
 #root {
-  max-width: 1280px;
+  width: 100vw;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -27,6 +27,7 @@
 
 .card {
   padding: 2em;
+  font-size: 12px;
 }
 
 .read-the-docs {
@@ -54,6 +55,8 @@ h1 {
   justify-content: center;
   border: 1px solid white;
   border-radius: 25px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .titles {
@@ -97,13 +100,12 @@ p {
 }
 
 nav{
-  background-color: #1a1a1a;
-  width: 600px;
+  background-color: black;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   border-radius: 20px;
   margin-top: 20px;
-  border: 1px solid white;
   margin-bottom: 25px;
 }
 
@@ -144,7 +146,7 @@ input {
 }
 
 .editProfile{
-  width: 500px;
+  width: 80vw;
   display: flex;
   flex-direction: column;
   margin-left: auto;
@@ -176,19 +178,9 @@ p b {
 
 
 .homeImage{
-  width: 550px;
+  width: 350px;
   filter: drop-shadow(0 0 2em #c3073f);
-}
 
-
-
-.homeImage:hover{
-content: url('./assets/dining-table-bbq.jpg');
-width: 100%;
-margin-left: auto;
-margin-top: 30px;
-margin-right: auto;
-filter: none
 }
 
 .userLoggeIn{
@@ -233,18 +225,11 @@ hr{
 }
 
 .userEditDiv {
-  width: 600px;
+  width: 100vw;
   border: 1px solid white;
   border-radius: 25px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* .logImage{
-  width: 100px;
-  position: absolute;
-  margin-bottom: 50px;
-}
 
-.rentMyYard{
-  display: flex;
-  position: relative;
-} */

@@ -127,7 +127,7 @@ useEffect(() => {
      <input  className="inputs" value={brandGrill} onChange={updateBrandGrill}/><br></br> <br></br>
      <label  className="titles">Grill Model  </label>
      <input className="inputs" value={modelGrill} onChange={updateModelGrill}/><br></br> <br></br>
-     <label  className="titles"> Yard Details + Size  </label>
+     <label  className="titles"> Yard Details   </label>
      <textarea className="inputs" value={yardDetailsAndSize} rows="4" cols="25" onChange={updateYardDetailsAndSize}/> <br></br><br></br>
      <br></br><br></br>
      <label  className="titles"> Price  </label>
@@ -136,7 +136,7 @@ useEffect(() => {
      <input className="inputs"  onChange={(e) => handleFileUpload(e)} type="file"/>
      <br></br><br></br>
       
-     <br></br><button className="yardRent">Click here to list your yard</button>
+     <br></br><button className="yardRent">List it now</button>
      <br></br><br></br><br></br>
      </form>
      </div>

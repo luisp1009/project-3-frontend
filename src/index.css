@@ -6,13 +6,13 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  background-color: black;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  
 }
 
 a {
@@ -30,22 +30,6 @@ body {
   place-items: center;
   min-width: 32 0px;
   min-height: 100vh;
-
-  
-}
-
-
-body::after {
-  content: "";
-  background: url(/src/assets/BackgroundImage.jpg);
-  background-size: cover;
-  opacity: 0.1;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: fixed;
-  z-index: -1;   
 }
 
 
@@ -64,11 +48,13 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  margin-bottom: ;
 }
 button:hover {
   background-color: white;
   color: black;
   box-shadow: 0 5px 15px #c3073f;
+  margin-bottom: 15px;
 
 }
 button:focus,
@@ -95,6 +81,45 @@ button:active{
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .userLoggeIn{
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 20px !important;
+  }
+  .username{
+    margin-right: 10px;
+    margin-top: 11px;
+  }
+
+  button{
+    margin-bottom: 10px;
+  }
+
+  .yardForm{
+    width: 100vw;
+  }
+.titles{
+  margin-left: 20px;
+}
+
+  .inputs{
+    width: 200px;
+    margin-right: 20px;
+  }
+  .yardRent{
+    margin-right: 20px;
+  }
+  p{
+    font-size: 15px;
+    width: 250px;
+    text-align: left;
+  }
+  .yardDetails{
+    width: 300px;
   }
 }
 

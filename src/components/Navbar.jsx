@@ -27,7 +27,7 @@ function Navbar() {
 
       {isLoggedIn && (
         <><Link to="/rent">
-            <button>Rent your Outdoor space</button>
+            <button>Rent it </button>
           </Link>
           <Link to="/listing">
             <button>Find Backyards</button>

@@ -30,7 +30,7 @@ const [listingArray, setListingArray] = useState([])
                 <Link to={`/listing/${singleListing._id}`}>
                 
 
-                <h3 className="titleYardToRent">➡️ ➡️ ➡️  {singleListing.title} ⬅️ ⬅️ ⬅️</h3>
+                <h3 className="titleYardToRent">➡️ {singleListing.title} ⬅️ </h3>
             
                 </Link>
                 </div>
